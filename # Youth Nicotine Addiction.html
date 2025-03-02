@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Nicotine Addiction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative; /* Position relative for the striped backgrounds */
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2em; /* Original font size */
+            margin: 0; /* Remove default margin */
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            font-weight: 400;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #007BFF;
+        }
+        .impact {
+            background-color: #e7f3fe;
+            border-left: 6px solid #007BFF;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .event-details, .registration-details {
+            display: none; /* Initially hidden */
+            background: #e7f3fe;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .event-details h3, .registration-details h3 {
+            color: #007BFF;
+        }
+        .ribbon {
+            position: relative;
+            text-align: center;
+            margin: 20px 0;
+            background-image: url('https://media.istockphoto.com/id/174661842/photo/colorful-handprints.jpg?s=612x612&w=0&k=20&c=kF3tKzLzO3PXCmoHvLaYxja_RmuXmNBUSL6MScBGnCo=');
+            background-size: cover;
+            background-position: center;
+            height: 200px; /* Adjust height as needed */
+        }
+        .ribbon-text {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: white;
+            background-color: rgba(0, 123, 255, 0.7); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 5px;
+        }
+        /* Striped background on the left side */
+        .striped-background-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20%; /* Adjust width as needed */
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                #007BFF,
+                #007BFF 10px,
+                #f4f4f4 10px,
+                #f4f4f4 20px
+            );
+            z-index: -1; /* Send it to the back */
+        }
+        /* Striped background on the right side */
+        .striped-background-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20%; /* Adjust width as needed */
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                #007BFF,
+                #007BFF 10px,
+                #f4f4f4 10px,
+                #f4f4f4 20px
+            );
+            z-index: -1; /* Send it to the back */
+        }
+        /* Team section styles */
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .team-member {
+            background: #e7f3fe;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            flex: 1 1 30%; /* Flexbox for responsive layout */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 100px; /* Fixed size for team member images */
+            height: 100px; /* Fixed size for team member images */
+        }
+        /* Flexbox for images in the welcome section */
+        .welcome-images {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .welcome-images img {
+            width: 200px; /* Set a fixed width for the images */
+            height: 200px; /* Set a fixed height for the images */
+            margin: 0 10px; /* Add some margin between images */
+            border-radius: 5px; /* Ensure images have rounded corners */
+        }
+    </style>
+    <script>
+        function toggleEventDetails() {
+            const eventDetails = document.getElementById('event-page');
+            eventDetails.style.display = eventDetails.style.display === 'none' || eventDetails.style.display === '' ? 'block' : 'none';
+        }
+
+        function toggleRegistrationDetails() {
+            const registrationDetails = document.getElementById('registration-page');
+            registrationDetails.style.display = registrationDetails.style.display === 'none' || registrationDetails.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Youth Nicotine Addiction</h1>
+        <p>Raising Awareness and Providing Resources for a Healthier Future</p> <!-- Description -->
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#events">Events</a> <!-- Events button --></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="striped-background-left"></div> <!-- Striped background on the left -->
+        <div class="striped-background-right"></div> <!-- Striped background on the right -->
+        <section class="ribbon">
+            <div class="ribbon-text">Join Us in the Fight Against Nicotine Addiction!</div>
+        </section>
+        <section id="home">
+            <h2>Welcome to Youth Nicotine Addiction Awareness</h2>
+            <p>This website aims to provide information and resources about nicotine addiction among youth. Our mission is to empower students to make informed choices regarding their health and well-being. We believe that education is key to preventing nicotine addiction and promoting healthier lifestyles.</p>
+            <p>Our team of dedicated student volunteers works tirelessly to create engaging programs and resources that resonate with their peers. By sharing personal stories and experiences, we aim to foster a supportive community where young people can learn from one another and feel empowered to resist peer pressure related to nicotine use.</p>
+            <div class="welcome-images">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvGiUu_OiOTuWy6dmpuQIQILHVF_4LcV0clA&s" alt="Youth Nicotine Awareness 1">
+                <img src="https://www.cdc.gov/vitalsigns/youth-tobacco-use/images/youth-tobacco-infographic-1.png?_=54510" alt="Youth Nicotine Awareness 2">
+                <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2017/06/cigarette-1497334131.jpg" alt="Youth Awareness"> <!-- Main Content Image -->
+            </div>
+        </section>
+        <section id="team">
+            <h2>Meet Our Team</h2>
+            <div class="team">
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/14309/user/icon/classic/f1?rev=2240339" alt="Ritch Vicerra">
+                    <h3>Ritch Vicerra</h3>
+                    <p>Team Leader</p>
+                    <p>Ritch is a passionate advocate for youth health and leads our initiatives to raise awareness about nicotine addiction.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/12261/user/icon/classic/f1?rev=2238371" alt="Janrich De Ausen">
+                    <h3>Janrich De Ausen</h3>
+                    <p>Outreach Coordinator</p>
+                    <p>Janrich engages with local schools and communities to promote our programs and resources.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/12425/user/icon/classic/f1?rev=2238931" alt="Ashton Dionisio">
+                    <h3>Ashton Dionisio</h3>
+                    <p>Event Organizer</p>
+                    <p>Ashton organizes workshops and events that educate students about the risks of nicotine use.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/12838/user/icon/classic/f1?rev=2243787" alt="Nicolas Gulapa">
+                    <h3>Nicolas Gulapa</h3>
+                    <p>Community Advocate</p>
+                    <p>Nicolas works to raise awareness in the community about the dangers of nicotine addiction.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/11677/user/icon/classic/f1?rev=2235067" alt="Marc Bacani">
+                    <h3>Marc Bacani</h3>
+                    <p>Social Media Manager</p>
+                    <p>Marc manages our social media presence to spread awareness and engage with youth.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/12898/user/icon/classic/f1?rev=2237931" alt="Cyrus Ibasco">
+                    <h3>Cyrus Ibasco</h3>
+                    <p>Research Coordinator</p>
+                    <p>Cyrus conducts research on youth nicotine consumption trends and informs our programs.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/13107/user/icon/classic/f1?rev=2243895" alt="Jeony Lukban">
+                    <h3>Jeony Lukban</h3>
+                    <p>Workshop Facilitator</p>
+                    <p>Jeony facilitates workshops that educate students about the risks of nicotine use.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://uphslms.com/blended/pluginfile.php/12838/user/icon/classic/f1?rev=2243787" alt="Aris Papas">
+                    <h3>Aris Papas</h3>
+                    <p>Event Planner</p>
+                    <p>Aris plans and organizes events to engage youth in discussions about nicotine addiction.</p>
+                </div>
+            </div>
+        </section>
+        <section id="events">
+            <h2>Upcoming Event</h2>
+            <p>Don't miss out on our upcoming event! Click below to learn more and register.</p>
+            <button id="event-button" onclick="toggleEventDetails()">View Event Details</button>
+        </section>
+
+        <section id="event-page" class="event-details">
+            <h2>Event Details</h2>
+            <h3>Nicotine Awareness Workshop</h3>
+            <p><strong>Date:</strong> March 15, 2025</p> <!-- Updated date -->
+            <p><strong>Time:</strong> 10:00 AM - 2:00 PM</p>
+            <p><strong>Location:</strong> Community Center, 123 Main St, Your City</p>
+            <p><strong>Description:</strong> Join us for an informative workshop on the dangers of nicotine addiction. Learn about the health risks, prevention strategies, and resources available for youth.</p>
+            <button onclick="toggleRegistrationDetails()">Register Now</button>
+        </section>
+
+        <section id="registration-page" class="registration-details">
+            <h2>Registration Information</h2>
+            <h3>How to Register</h3>
+            <p>To register for the Nicotine Awareness Workshop, please fill out the form below:</p>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" required><br><br>
+                <button type="submit">Submit Registration</button>
+            </form>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are dedicated to raising awareness about the dangers of nicotine addiction in young people. Our mission is to educate youth and their families about the risks associated with nicotine use and to provide resources that promote healthier choices.</p>
+            <p>Our initiative started in response to the concerning amount of news and information regarding youth nicotine consumption. We recognized the urgent need to address this issue and empower young people to make informed decisions about their health. Through workshops, community events, and educational materials, we aim to equip young people with the knowledge and skills they need to resist peer pressure and lead healthier lives.</p>
+        </section>
+
+        <section id="impact">
+            <h2>Impact of Nicotine Addiction on Youth</h2>
+            <div class="impact">
+                <h3>Health Risks</h3>
+                <p>Nicotine addiction can lead to serious health issues, including:</p>
+                <ul>
+                    <li>Respiratory problems</li>
+                    <li>Increased heart rate and blood pressure</li>
+                    <li>Higher risk of developing mood disorders</li>
+                    <li>Impaired brain development in adolescents</li>
+                    <li>Increased risk of addiction to other substances</li>
+                    <li>Negative impact on lung function</li>
+                    <li>Increased risk of cardiovascular diseases</li>
+                    <li>Potential for developing type 2 diabetes</li>
+                    <li>Withdrawal symptoms such as irritability and anxiety</li>
+                </ul>
+            </div>
+            <div class="impact">
+                <h3>Academic Performance</h3>
+                <p>Students who use nicotine may experience:</p>
+                <ul>
+                    <li>Decreased concentration and focus</li>
+                    <li>Lower grades</li>
+                    <li>Increased absenteeism from school</li>
+                    <li>Difficulty in retaining information</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like more information about our programs, please feel free to reach out to us:</p>
+            <p><strong>Email:</strong> stopthepuffynaa@gmail.com</p>
+            <p><strong>Phone:</strong> (+63) 947-459-9209</p>
+            <p><strong>Address:</strong> Sto. Nino, Biñan, Biñan, Philippines, 4024</p
