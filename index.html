@@ -11,12 +11,13 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #87CEEB, #E6E6FA); /* Sky blue to light purple gradient */
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.6), rgba(0, 255, 0, 0.6), rgba(0, 0, 255, 0.6), rgba(128, 0, 128, 0.6)); /* Watercolor effect */
+            background-blend-mode: multiply; /* Blend colors */
             color: #333;
             position: relative;
         }
         header {
-            background: #4CAF50; /* Greenish color */
+            background: rgba(76, 175, 80, 0.8); /* Semi-transparent greenish color */
             color: white;
             padding: 20px;
             text-align: center;
@@ -31,7 +32,7 @@
             font-weight: 400;
         }
         nav {
-            background: #333;
+            background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
             color: white;
             padding: 10px 0;
         }
@@ -63,7 +64,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         button {
-            background-color: #4CAF50; /* Greenish color */
+            background-color: rgba(76, 175, 80, 0.8); /* Semi-transparent greenish color */
             color: white;
             border: none;
             padding: 10px 15px;
@@ -73,13 +74,13 @@
             transition: background-color 0.3s, transform 0.3s; /* Added transform */
         }
         button:hover {
-            background-color: #388E3C; /* Darker green on hover */
+            background-color: rgba(56, 142, 60, 0.8); /* Darker green on hover */
             transform: scale(1.05); /* Slightly enlarge on hover */
         }
         footer {
             text-align: center;
             padding: 10px;
-            background: #333;
+            background: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
             color: white;
             position: relative;
             bottom: 0;
@@ -91,12 +92,12 @@
             border-radius: 5px;
         }
         h2 {
-            color: #4CAF50; /* Greenish color for headings */
+            color: rgba(76, 175, 80, 0.8); /* Semi-transparent greenish color for headings */
             font-family: 'Montserrat', sans-serif; /* Secondary font for headings */
         }
         .impact {
             background-color: #e7f3fe; /* Light blue background */
-            border-left: 6px solid #4CAF50; /* Greenish border */
+            border-left: 6px solid rgba(76, 175, 80, 0.8); /* Greenish border */
             padding: 10px;
             margin: 10px 0;
         }
@@ -108,7 +109,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .event-details h3, .registration-details h3 {
-            color: #4CAF50; /* Greenish color */
+            color: rgba(76, 175, 80, 0.8); /* Greenish color */
         }
         .ribbon {
             position: relative;
@@ -137,10 +138,10 @@
             height: 100%;
             background: repeating-linear-gradient(
                 45deg,
-                #4CAF50,
-                #4CAF50 10px,
-                #E6E6FA 10px,
-                #E6E6FA 20px
+                rgba(76, 175, 80, 0.8),
+                rgba(76, 175, 80, 0.8) 10px,
+                rgba(255, 255, 0, 0.6) 10px,
+                rgba(255, 255, 0, 0.6) 20px
             );
             z-index: -1;
         }
