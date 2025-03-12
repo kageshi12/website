@@ -16,6 +16,13 @@
             animation: gradient 15s ease infinite; /* Animation for smooth blending */
             color: #333;
             position: relative;
+            transition: background 0.5s, color 0.5s; /* Smooth transition for background and text color */
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background: linear-gradient(to right, rgba(0, 0, 50, 0.8), rgba(50, 50, 0, 0.8), rgba(0, 50, 0, 0.8), rgba(0, 0, 50, 0.8));
+            color: #f0f0f0; /* Light text color for dark mode */
         }
 
         @keyframes gradient {
@@ -70,7 +77,15 @@
             padding: 15px;
             border-radius: 10px; /* Rounded corners */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.5s, color 0.5s; /* Smooth transition for section background and text color */
         }
+
+        /* Dark Mode Section Styles */
+        section.dark-mode {
+            background: rgba(30, 30, 30, 0.9); /* Dark background for sections */
+            color: #f0f0f0; /* Light text color for sections */
+        }
+
         button {
             background-color: rgba(76, 175, 80, 0.8); /* Semi-transparent greenish color */
             color: white;
@@ -262,19 +277,28 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Dark mode toggle function
+        function toggleDarkMode() {
+            const body = document.body;
+            const sections = document.querySelectorAll('section');
+            body.classList.toggle('dark-mode');
+            sections.forEach(section => section.classList.toggle('dark-mode'));
+        }
     </script>
 </head>
 <body>
     <header>
         <h1>Youth Nicotine Addiction</h1>
         <p>Raising Awareness and Providing Resources for a Healthier Future</p>
+        <button onclick="toggleDarkMode()" style="position: absolute; top: 10px; left: 10px; background: rgba(255, 255, 255, 0.8); border: none; border-radius: 5px; padding: 5px 10px; cursor: pointer;">Toggle Dark Mode</button>
     </header>
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#events">Events</a></li>
-            <li><a href="#blog">Blog</a></li>
+            <li><a href="#history">History and Relations</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
@@ -422,14 +446,12 @@
             <p><strong>Phone:</strong> (+63) 947-459-9209</p>
             <p><strong>Address:</strong> Sto. Nino, Biñan, Biñan, Philippines, 4024</p>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Youth Nicotine Addiction Awareness. All rights reserved.</p>
-    </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" onclick="scrollToTop()">
-        <img src="https://img.icons8.com/ios-filled/50/000000/chevron-up.png" alt="Scroll to Top" />
-    </button>
-</body>
-</html>
+        <!-- New Section: History and Relations -->
+        <section id="history">
+            <h2>HISTORY AND RELATIONS</h2>
+            <p>Nicotine has a long history, dating back to the indigenous peoples of the Americas, who used tobacco for ceremonial and medicinal purposes. The tobacco plant, Nicotiana tabacum, was introduced to Europe in the 16th century, where it quickly gained popularity. Initially, tobacco was consumed in various forms, including smoking, chewing, and snuffing. As its use spread, so did the understanding of its effects on health, leading to a complex relationship with society.</p>
+            <p>In the 20th century, the rise of cigarette manufacturing transformed nicotine consumption into a mass-market phenomenon. The marketing of cigarettes often glamorized smoking, associating it with sophistication and rebellion. However, as scientific research began to reveal the health risks associated with smoking, including cancer and heart disease, public perception started to shift. This led to increased regulation and public health campaigns aimed at reducing tobacco use.</p>
+            <p>Today, nicotine is not only associated with traditional tobacco products but also with newer alternatives such as e-cigarettes and vaping devices. These products have gained popularity, especially among youth, due to their perceived reduced harm and variety of flavors. However, the addictive nature of nicotine remains a significant concern, as many users transition from vaping to traditional tobacco products, perpetuating the cycle of addiction.</p>
+            <p>Understanding the history of nicotine and its societal implications is crucial for addressing the ongoing challenges of nicotine addiction. Our organization aims to educate young people about the risks associated with nicotine use, regardless of the form it takes. By providing resources and support, we hope to empower individuals to make informed choices about their health and well-being.</p>
+            <p>Our mission is to create a future where young people are equipped with the knowledge and tools
