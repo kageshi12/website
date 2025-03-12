@@ -196,6 +196,32 @@
             border-radius: 5px;
         }
 
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .scroll-to-top:hover {
+            opacity: 1;
+        }
+        .scroll-to-top img {
+            width: 30px;
+            height: 30px;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             header h1 {
@@ -230,6 +256,11 @@
         function toggleRegistrationDetails() {
             const registrationDetails = document.getElementById('registration-page');
             registrationDetails.style.display = registrationDetails.style.display === 'none' || registrationDetails.style.display === '' ? 'block' : 'none';
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </head>
@@ -395,5 +426,10 @@
     <footer>
         <p>&copy; 2025 Youth Nicotine Addiction Awareness. All rights reserved.</p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        <img src="https://img.icons8.com/ios-filled/50/000000/chevron-up.png" alt="Scroll to Top" />
+    </button>
 </body>
 </html>
