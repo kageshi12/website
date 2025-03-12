@@ -11,11 +11,19 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 0, 0.6), rgba(0, 255, 0, 0.6), rgba(0, 0, 255, 0.6), rgba(128, 0, 128, 0.6)); /* Watercolor effect */
-            background-blend-mode: multiply; /* Blend colors */
+            background: linear-gradient(135deg, rgba(255, 255, 0, 0.8), rgba(0, 255, 0, 0.8), rgba(0, 0, 255, 0.8), rgba(128, 0, 128, 0.8));
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite; /* Animation for smooth blending */
             color: #333;
             position: relative;
         }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         header {
             background: rgba(76, 175, 80, 0.8); /* Semi-transparent greenish color */
             color: white;
