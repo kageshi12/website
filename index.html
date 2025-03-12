@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youth Nicotine Addiction</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"> <!-- Secondary Font -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -12,7 +13,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            position: relative; /* Position relative for the striped backgrounds */
+            position: relative;
         }
         header {
             background: #007BFF;
@@ -21,8 +22,8 @@
             text-align: center;
         }
         header h1 {
-            font-size: 2em; /* Original font size */
-            margin: 0; /* Remove default margin */
+            font-size: 2.5em; /* Increased font size */
+            margin: 0;
         }
         header p {
             font-size: 1.2em;
@@ -49,7 +50,7 @@
             transition: color 0.3s;
         }
         nav ul li a:hover {
-            color: #007BFF;
+            color: #FFD700; /* Gold color on hover */
         }
         main {
             padding: 20px;
@@ -58,8 +59,8 @@
             margin-bottom: 20px;
             background: white;
             padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         button {
             background-color: #007BFF;
@@ -69,9 +70,11 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s; /* Added transform */
         }
         button:hover {
             background-color: #0056b3;
+            transform: scale(1.05); /* Slightly enlarge on hover */
         }
         footer {
             text-align: center;
@@ -89,6 +92,7 @@
         }
         h2 {
             color: #007BFF;
+            font-family: 'Montserrat', sans-serif; /* Secondary font for headings */
         }
         .impact {
             background-color: #e7f3fe;
@@ -97,7 +101,7 @@
             margin: 10px 0;
         }
         .event-details, .registration-details {
-            display: none; /* Initially hidden */
+            display: none;
             background: #e7f3fe;
             padding: 20px;
             border-radius: 5px;
@@ -113,25 +117,23 @@
             background-image: url('https://media.istockphoto.com/id/174661842/photo/colorful-handprints.jpg?s=612x612&w=0&k=20&c=kF3tKzLzO3PXCmoHvLaYxja_RmuXmNBUSL6MScBGnCo=');
             background-size: cover;
             background-position: center;
-            height: 200px; /* Adjust height as needed */
+            height: 200px;
         }
         .ribbon-text {
             position: absolute;
-            top: 50%; /* Center vertically */
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 2em;
             color: white;
-            background-color: rgba(0, 123, 255, 0.7); /* Semi-transparent background */
+            background-color: rgba(0, 123, 255, 0.7);
             padding: 10px;
             border-radius: 5px;
         }
-        /* Striped background on the left side */
-        .striped-background-left {
+        .striped-background-left, .striped-background-right {
             position: absolute;
             top: 0;
-            left: 0;
-            width: 20%; /* Adjust width as needed */
+            width: 20%;
             height: 100%;
             background: repeating-linear-gradient(
                 45deg,
@@ -140,25 +142,14 @@
                 #f4f4f4 10px,
                 #f4f4f4 20px
             );
-            z-index: -1; /* Send it to the back */
+            z-index: -1;
         }
-        /* Striped background on the right side */
         .striped-background-right {
-            position: absolute;
-            top: 0;
             right: 0;
-            width: 20%; /* Adjust width as needed */
-            height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                #007BFF,
-                #007BFF 10px,
-                #f4f4f4 10px,
-                #f4f4f4 20px
-            );
-            z-index: -1; /* Send it to the back */
         }
-        /* Team section styles */
+        .striped-background-left {
+            left: 0;
+        }
         .team {
             display: flex;
             justify-content: space-around;
@@ -170,15 +161,18 @@
             padding: 15px;
             margin: 10px;
             text-align: center;
-            flex: 1 1 30%; /* Flexbox for responsive layout */
+            flex: 1 1 30%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s; /* Added transform */
+        }
+        .team-member:hover {
+            transform: scale(1.05); /* Slightly enlarge on hover */
         }
         .team-member img {
             border-radius: 50%;
-            width: 100px; /* Fixed size for team member images */
-            height: 100px; /* Fixed size for team member images */
+            width: 100px;
+            height: 100px;
         }
-        /* Flexbox for images in the welcome section */
         .welcome-images {
             display: flex;
             justify-content: space-around;
@@ -186,10 +180,10 @@
             margin-top: 20px;
         }
         .welcome-images img {
-            width: 200px; /* Set a fixed width for the images */
-            height: 200px; /* Set a fixed height for the images */
-            margin: 0 10px; /* Add some margin between images */
-            border-radius: 5px; /* Ensure images have rounded corners */
+            width: 200px;
+            height: 200px;
+            margin: 0 10px;
+            border-radius: 5px;
         }
     </style>
     <script>
@@ -207,20 +201,20 @@
 <body>
     <header>
         <h1>Youth Nicotine Addiction</h1>
-        <p>Raising Awareness and Providing Resources for a Healthier Future</p> <!-- Description -->
+        <p>Raising Awareness and Providing Resources for a Healthier Future</p>
     </header>
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#events">Events</a> <!-- Events button --></li>
+            <li><a href="#events">Events</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
     </nav>
     <main>
-        <div class="striped-background-left"></div> <!-- Striped background on the left -->
-        <div class="striped-background-right"></div> <!-- Striped background on the right -->
+        <div class="striped-background-left"></div>
+        <div class="striped-background-right"></div>
         <section class="ribbon">
             <div class="ribbon-text">Join Us in the Fight Against Nicotine Addiction!</div>
         </section>
@@ -231,7 +225,7 @@
             <div class="welcome-images">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvGiUu_OiOTuWy6dmpuQIQILHVF_4LcV0clA&s" alt="Youth Nicotine Awareness 1">
                 <img src="https://www.cdc.gov/vitalsigns/youth-tobacco-use/images/youth-tobacco-infographic-1.png?_=54510" alt="Youth Nicotine Awareness 2">
-                <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2017/06/cigarette-1497334131.jpg" alt="Youth Awareness"> <!-- Main Content Image -->
+                <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2017/06/cigarette-1497334131.jpg" alt="Youth Awareness">
             </div>
         </section>
         <section id="team">
@@ -296,7 +290,7 @@
         <section id="event-page" class="event-details">
             <h2>Event Details</h2>
             <h3>Nicotine Awareness Workshop</h3>
-            <p><strong>Date:</strong> March 15, 2025</p> <!-- Updated date -->
+            <p><strong>Date:</strong> March 15, 2025</p>
             <p><strong>Time:</strong> 10:00 AM - 2:00 PM</p>
             <p><strong>Location:</strong> Community Center, 123 Main St, Your City</p>
             <p><strong>Description:</strong> Join us for an informative workshop on the dangers of nicotine addiction. Learn about the health risks, prevention strategies, and resources available for youth.</p>
@@ -358,4 +352,11 @@
             <p>If you have any questions or would like more information about our programs, please feel free to reach out to us:</p>
             <p><strong>Email:</strong> stopthepuffynaa@gmail.com</p>
             <p><strong>Phone:</strong> (+63) 947-459-9209</p>
-            <p><strong>Address:</strong> Sto. Nino, Biñan, Biñan, Philippines, 4024</p
+            <p><strong>Address:</strong> Sto. Nino, Biñan, Biñan, Philippines, 4024</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Youth Nicotine Addiction Awareness. All rights reserved.</p>
+    </footer>
+</body>
+</html>
